@@ -7,7 +7,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Calculatorw'),
+        title: const Text('Calculator'),
         backgroundColor: Colors.indigo[700],
       ),
     );
