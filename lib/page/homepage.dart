@@ -13,6 +13,20 @@ class _HomePageState extends State<HomePage> {
   var angka1 = TextEditingController();
   var angka2 = TextEditingController();
 
+  @override
+  void initState() {
+    super.initState();
+    angka1;
+    angka2;
+  }
+
+  @override
+  void dispose() {
+    angka1;
+    angka2;
+    super.dispose();
+  }
+
   void penjumlahan() {
     setState(() {
       if (formKey.currentState!.validate()) {
@@ -78,6 +92,7 @@ class _HomePageState extends State<HomePage> {
       padding: const EdgeInsets.all(5),
       child: TextFormField(
         controller: controller,
+        keyboardType: TextInputType.number,
         validator: (value) {
           if (value == null || value.isEmpty) {
             return 'Mohon Masukkan Angka';
