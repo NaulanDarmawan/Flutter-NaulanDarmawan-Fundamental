@@ -13,20 +13,6 @@ class _HomePageState extends State<HomePage> {
   var angka1 = TextEditingController();
   var angka2 = TextEditingController();
 
-  @override
-  void initState() {
-    super.initState();
-    angka1;
-    angka2;
-  }
-
-  @override
-  void dispose() {
-    angka1;
-    angka2;
-    super.dispose();
-  }
-
   void penjumlahan() {
     setState(() {
       if (formKey.currentState!.validate()) {
