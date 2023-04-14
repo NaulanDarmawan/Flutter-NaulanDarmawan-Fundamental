@@ -25,7 +25,6 @@ class MainApp extends StatelessWidget {
       },
       theme: ThemeData(
         scaffoldBackgroundColor: primaryColor,
-        buttonTheme: ButtonThemeData(buttonColor: headerColor),
       ),
     );
   }
