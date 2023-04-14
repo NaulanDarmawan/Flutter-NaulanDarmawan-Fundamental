@@ -10,8 +10,24 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   double result = 0;
   var formKey = GlobalKey<FormState>();
-  var angka1 = TextEditingController();
-  var angka2 = TextEditingController();
+  late TextEditingController angka1;
+  late TextEditingController angka2;
+
+  //Berfungsi Untuk Menyiapkan Controller Disaat Page Di Load
+  @override
+  void initState() {
+    super.initState();
+    angka1 = TextEditingController();
+    angka2 = TextEditingController();
+  }
+
+  //Berfungsi Untuk Menghapus Controller Disaat Page Di Close
+  @override
+  void dispose() {
+    angka1.dispose();
+    angka2.dispose();
+    super.dispose();
+  }
 
   void penjumlahan() {
     setState(() {
