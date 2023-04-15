@@ -83,6 +83,12 @@ class _LoginPageState extends State<LoginPage> {
                 controller: emailController,
                 textAlignVertical: TextAlignVertical.top,
                 keyboardType: TextInputType.emailAddress,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Mohon Masukkan Data!';
+                  }
+                  return null;
+                },
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderSide: const BorderSide(color: Colors.black),
@@ -107,6 +113,12 @@ class _LoginPageState extends State<LoginPage> {
                 controller: passController,
                 textAlignVertical: TextAlignVertical.top,
                 obscureText: sembunyikan,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Mohon Masukkan Data!';
+                  }
+                  return null;
+                },
                 decoration: InputDecoration(
                   suffixIcon: IconButton(
                       onPressed: () {

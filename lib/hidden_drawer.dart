@@ -3,6 +3,7 @@ import 'package:flutter_naulandarmawan_fundamental/page/about_page.dart';
 import 'package:flutter_naulandarmawan_fundamental/page/account_page.dart';
 import 'package:flutter_naulandarmawan_fundamental/page/calculator_page.dart';
 import 'package:flutter_naulandarmawan_fundamental/page/home_page.dart';
+import 'package:flutter_naulandarmawan_fundamental/page/science_page.dart';
 import 'package:flutter_naulandarmawan_fundamental/theme.dart';
 import 'package:hidden_drawer_menu/hidden_drawer_menu.dart';
 
@@ -22,11 +23,18 @@ class _HiddenDrawerState extends State<HiddenDrawer> {
     _pages = [
       ScreenHiddenDrawer(
           ItemHiddenMenu(
-              name: 'HomePage',
+              name: 'Berita Terkini',
               baseStyle: isiTextStyle,
               colorLineSelected: headerColor,
               selectedStyle: subJudulTextStyle),
           const HomePage()),
+      ScreenHiddenDrawer(
+          ItemHiddenMenu(
+              name: 'Berita Sains Terbaru',
+              baseStyle: isiTextStyle,
+              colorLineSelected: headerColor,
+              selectedStyle: subJudulTextStyle),
+          const SciencePage()),
       ScreenHiddenDrawer(
           ItemHiddenMenu(
               name: 'About Us',

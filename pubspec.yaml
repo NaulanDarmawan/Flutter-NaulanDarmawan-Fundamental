@@ -1,17 +1,22 @@
 name: flutter_naulandarmawan_fundamental
 description: A new Flutter project.
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0
 
 environment:
-  sdk: '>=2.19.2 <3.0.0'
+  sdk: ">=2.19.2 <3.0.0"
 
 dependencies:
+  cloud_firestore: ^4.5.1
+  firebase_auth: ^4.4.1
+  firebase_core: ^2.9.0
   flutter:
     sdk: flutter
   google_fonts: ^4.0.3
   hidden_drawer_menu: ^3.0.1
+  http: ^0.13.5
   lottie: ^2.3.2
+  url_launcher: ^6.1.10
 
 dev_dependencies:
   flutter_lints: ^2.0.0

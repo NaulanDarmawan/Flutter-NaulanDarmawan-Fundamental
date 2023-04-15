@@ -88,6 +88,12 @@ class _RegisterPageState extends State<RegisterPage>
               child: TextFormField(
                 controller: usernameController,
                 textAlignVertical: TextAlignVertical.top,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Mohon Masukkan Data!';
+                  }
+                  return null;
+                },
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderSide: const BorderSide(color: Colors.black),
@@ -112,6 +118,12 @@ class _RegisterPageState extends State<RegisterPage>
                 controller: emailController,
                 textAlignVertical: TextAlignVertical.top,
                 keyboardType: TextInputType.emailAddress,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Mohon Masukkan Data!';
+                  }
+                  return null;
+                },
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderSide: const BorderSide(color: Colors.black),
@@ -136,6 +148,12 @@ class _RegisterPageState extends State<RegisterPage>
                 controller: passController,
                 textAlignVertical: TextAlignVertical.top,
                 obscureText: sembunyikan,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Mohon Masukkan Data!';
+                  }
+                  return null;
+                },
                 decoration: InputDecoration(
                   suffixIcon: IconButton(
                       onPressed: () {

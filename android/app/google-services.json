@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "854929406303",
+    "project_id": "alterra-d96ee",
+    "storage_bucket": "alterra-d96ee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:854929406303:android:22ced209dacec7a0121eea",
+        "android_client_info": {
+          "package_name": "com.example.flutter_naulandarmawan_fundamental"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "854929406303-i3rupuqbf568vib4459pnl2jfc5mfd1c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3P7gG58lGb3J6ABf1sdCLFYi7V5Acl-U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "854929406303-i3rupuqbf568vib4459pnl2jfc5mfd1c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
