@@ -9,10 +9,7 @@ class LandingPage extends StatefulWidget {
   State<LandingPage> createState() => _LandingPageState();
 }
 
-class _LandingPageState extends State<LandingPage>
-    with TickerProviderStateMixin {
-  late AnimationController _controller;
-
+class _LandingPageState extends State<LandingPage> {
   @override
   void initState() {
     super.initState();
@@ -20,12 +17,6 @@ class _LandingPageState extends State<LandingPage>
       const Duration(seconds: 3),
       () => Navigator.pushReplacementNamed(context, '/login'),
     );
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
   }
 
   @override

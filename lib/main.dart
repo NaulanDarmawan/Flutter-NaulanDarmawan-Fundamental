@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_naulandarmawan_fundamental/hidden_drawer.dart';
 import 'package:flutter_naulandarmawan_fundamental/theme.dart';
 
-import 'page/home_page.dart';
 import 'page/landing_page.dart';
 import 'page/login_page.dart';
 import 'page/register_page.dart';
@@ -21,7 +21,7 @@ class MainApp extends StatelessWidget {
         '/': (context) => const LandingPage(),
         '/login': (context) => const LoginPage(),
         '/register': (context) => const RegisterPage(),
-        '/home': (context) => const HomePage(),
+        '/home': (context) => const HiddenDrawer(),
       },
       theme: ThemeData(
         scaffoldBackgroundColor: primaryColor,

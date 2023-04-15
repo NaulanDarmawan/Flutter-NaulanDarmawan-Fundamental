@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   google_fonts: ^4.0.3
+  hidden_drawer_menu: ^3.0.1
   lottie: ^2.3.2
 
 dev_dependencies:
