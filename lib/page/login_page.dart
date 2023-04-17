@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_naulandarmawan_fundamental/model/authentication.dart';
 import 'package:flutter_naulandarmawan_fundamental/theme.dart';
 
 class LoginPage extends StatefulWidget {
@@ -10,6 +11,8 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   var formKey = GlobalKey<FormState>();
+  String? email;
+  String? password;
   bool sembunyikan = true;
   late TextEditingController emailController;
   late TextEditingController passController;
@@ -83,6 +86,9 @@ class _LoginPageState extends State<LoginPage> {
                 controller: emailController,
                 textAlignVertical: TextAlignVertical.top,
                 keyboardType: TextInputType.emailAddress,
+                onSaved: (val) {
+                  email = val;
+                },
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Mohon Masukkan Data!';
@@ -113,6 +119,9 @@ class _LoginPageState extends State<LoginPage> {
                 controller: passController,
                 textAlignVertical: TextAlignVertical.top,
                 obscureText: sembunyikan,
+                onSaved: (val) {
+                  password = val;
+                },
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Mohon Masukkan Data!';
@@ -146,7 +155,19 @@ class _LoginPageState extends State<LoginPage> {
       children: [
         ElevatedButton(
             onPressed: () {
-              Navigator.pushReplacementNamed(context, '/home');
+              if (formKey.currentState!.validate()) {
+                formKey.currentState!.save();
+                AuthenticationHelper()
+                    .login(email: email!, password: password!)
+                    .then((result) {
+                  if (result == null) {
+                    Navigator.pushReplacementNamed(context, '/home');
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text(result, style: isiTextStyle)));
+                  }
+                });
+              }
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: headerColor,

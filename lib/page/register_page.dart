@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_naulandarmawan_fundamental/page/account_page.dart';
 import 'package:lottie/lottie.dart';
 
+import '../model/authentication.dart';
 import '../theme.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -178,7 +180,26 @@ class _RegisterPageState extends State<RegisterPage>
   Widget button() {
     return ElevatedButton(
         onPressed: () {
-          Navigator.pushReplacementNamed(context, '/login');
+          if (formKey.currentState!.validate()) {
+            formKey.currentState!.save();
+            AuthenticationHelper()
+                .register(
+                    email: emailController.text, password: passController.text)
+                .then((result) {
+              if (result == null) {
+                Navigator.pushReplacementNamed(context, '/home');
+                setState(() {
+                  AccountPage(
+                      username: usernameController.text,
+                      email: emailController.text,
+                      password: passController.text);
+                });
+              } else {
+                ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text(result, style: isiTextStyle)));
+              }
+            });
+          }
         },
         style: ElevatedButton.styleFrom(
           backgroundColor: headerColor,

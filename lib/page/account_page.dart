@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_naulandarmawan_fundamental/model/authentication.dart';
 
 import '../theme.dart';
 
 class AccountPage extends StatefulWidget {
-  const AccountPage({super.key});
+  final username, email, password;
+  const AccountPage({super.key, this.username, this.email, this.password});
 
   @override
   State<AccountPage> createState() => _AccountPageState();
@@ -23,6 +25,10 @@ class _AccountPageState extends State<AccountPage> {
           const SizedBox(height: 20),
           dataUser(),
           const SizedBox(height: 38),
+          teks(),
+          const SizedBox(height: 49),
+          button(),
+          const SizedBox(height: 30),
         ],
       ),
     );
@@ -63,6 +69,7 @@ class _AccountPageState extends State<AccountPage> {
             readOnly: true,
             textAlignVertical: TextAlignVertical.top,
             decoration: InputDecoration(
+              hintText: 'Naulan22',
               border: OutlineInputBorder(
                 borderSide: const BorderSide(color: Colors.black),
                 borderRadius: BorderRadius.circular(20),
@@ -87,6 +94,7 @@ class _AccountPageState extends State<AccountPage> {
             textAlignVertical: TextAlignVertical.top,
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
+              hintText: 'naulan@gmail.com',
               border: OutlineInputBorder(
                 borderSide: const BorderSide(color: Colors.black),
                 borderRadius: BorderRadius.circular(20),
@@ -111,6 +119,7 @@ class _AccountPageState extends State<AccountPage> {
             textAlignVertical: TextAlignVertical.top,
             obscureText: sembunyikan,
             decoration: InputDecoration(
+              hintText: 'NAULAN22',
               suffixIcon: IconButton(
                   onPressed: () {
                     setState(() {
@@ -128,6 +137,39 @@ class _AccountPageState extends State<AccountPage> {
           ),
         ),
       ],
+    );
+  }
+
+  Widget teks() {
+    return Container(
+      color: contentColor,
+      width: double.infinity,
+      height: 91,
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(44, 17, 48, 16),
+        child: Text(
+            textAlign: TextAlign.center,
+            'Ambil bagian. Lakukan guna-ulang dan daur-ulang. Bumi ini berharga!',
+            style: isiTextStyle),
+      ),
+    );
+  }
+
+  Widget button() {
+    return Padding(
+      padding: const EdgeInsets.only(left: 246, right: 30),
+      child: ElevatedButton(
+          onPressed: () {
+            AuthenticationHelper()
+                .signOut()
+                .then((_) => Navigator.pushReplacementNamed(context, '/login'));
+          },
+          style: ElevatedButton.styleFrom(
+              backgroundColor: headerColor,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(27),
+              )),
+          child: Center(child: Text('Log Out', style: isiTextStyle))),
     );
   }
 }

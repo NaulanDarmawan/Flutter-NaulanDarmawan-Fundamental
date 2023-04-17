@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.flutter_naulandarmawan_fundamental">
    <application
-        android:label="flutter_naulandarmawan_fundamental"
+        android:label="Greence"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

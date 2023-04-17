@@ -102,7 +102,8 @@ class AboutPage extends StatelessWidget {
                         children: [
                           IconButton(
                               onPressed: () async {
-                                var url = Uri.parse('');
+                                var url = Uri.parse(
+                                    'https://instagram.com/atnihs_alibanhsia?igshid=ZDdkNTZiNTM=');
                                 if (await canLaunchUrl(url)) {
                                   await launchUrl(url);
                                 } else {
@@ -113,7 +114,8 @@ class AboutPage extends StatelessWidget {
                                   'assets/images/Icon_Instagram.png')),
                           IconButton(
                               onPressed: () async {
-                                var url = Uri.parse('');
+                                var url = Uri.parse(
+                                    'https://www.linkedin.com/in/shinta-aishnabila');
                                 if (await canLaunchUrl(url)) {
                                   await launchUrl(url);
                                 } else {
@@ -124,7 +126,8 @@ class AboutPage extends StatelessWidget {
                                   'assets/images/Icon_LinkedIn.png')),
                           IconButton(
                               onPressed: () async {
-                                var url = Uri.parse('');
+                                var url = Uri.parse(
+                                    'https://twitter.com/atnihs_a?t=gIyqNRl0KxPk1WisRsV4oA&s=09');
                                 if (await canLaunchUrl(url)) {
                                   await launchUrl(url);
                                 } else {
